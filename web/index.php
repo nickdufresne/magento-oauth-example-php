@@ -16,9 +16,15 @@ $baseURL = getenv("BASE_URL");
 $consumerKey = getenv("CONSUMER_KEY");
 $consumerSecret = getenv("CONSUMER_SECRET");
 $callbackUrl = getenv("CALLBACK_URL");
+$authorizeURL = getenv("AUTHORIZE_URL");
 
 $requestTokenURL = $baseURL."/oauth/initiate";
-$authorizeURL = $baseURL."/stockroom/oauth_authorize";
+
+if (!isset($authorizeURL)) {
+    // admin authorize url
+    $authorizeURL = $baseURL."/admin/oauth_authorize";
+}
+
 $accessTokenURL = $baseURL."/oauth/token";
 $apiUrl = $baseURL."/api/rest";
 
