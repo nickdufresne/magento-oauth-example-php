@@ -73,5 +73,8 @@ try {
     echo "<br/>";
     print_r($e->lastResponse);
     
+    echo "<p> Oauth Token: ".$_SESSION['token']."</p>";
+    echo "<p> Oauth Token Secret: ".$_SESSION['secret']."</p>";
+    
     echo "<p><a href=\"?reset_session=1\"> Reset session </a></p>";
 }
