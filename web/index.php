@@ -63,8 +63,8 @@ try {
         $oauthClient->setToken($_SESSION['token'], $_SESSION['secret']);
         $resourceUrl = "$apiUrl/orders";
         $oauthClient->fetch($resourceUrl, array(), 'GET', array('Content-Type' => 'application/json'));
-        $productsList = json_decode($oauthClient->getLastResponse());
-        print_r($productsList);
+        $ordersList = json_decode($oauthClient->getLastResponse());
+        print_r($ordersList);
         echo "<p><a href=\"?reset_session=1\"> Reset session </a></p>";
     }
 } catch (OAuthException $e) {
