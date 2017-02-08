@@ -1,0 +1,6 @@
+{
+  "name": "Magento Oauth Test",
+  "description": "script to test oauth 1.0a flow with Magento",
+  "repository": "https://github.com/heroku/php-getting-started",
+  "addons": []
+}
