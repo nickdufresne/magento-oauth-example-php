@@ -22,11 +22,13 @@ $authorizeURL = $baseURL."/stockroom/oauth_authorize";
 $accessTokenURL = $baseURL."/oauth/token";
 $apiUrl = $baseURL."/api/rest";
 
+session_start();
+
 if (isset($_GET["reset_session"])) {
-    session_destroy();
+    $_SESSION['state'] = 0;
 }
 
-session_start();
+
 
 // helper to rerun the oauth flow with updated Magento settings
 if (!isset($_GET['oauth_token']) && isset($_SESSION['state']) && $_SESSION['state'] == 1) {
